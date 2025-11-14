@@ -10,3 +10,8 @@ class Map:
     def setup(self):
         pygame.draw.rect(self.surface, self.color,
                          pygame.Rect(0, 0, self.width, self.height))
+
+        image = pygame.image.load('Map/watersurface.jpg')
+        image=pygame.transform.scale(image, (self.width, self.height))
+        self.surface.blit(image, (0, 0))
+
