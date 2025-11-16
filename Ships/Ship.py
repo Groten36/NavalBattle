@@ -4,6 +4,7 @@ class Ship:
         self.length=length
         self.artillery=artillery
         self.max_speed=max_speed
+        self.status=Noneg
 
     def setup(self):
         pass
