@@ -1,9 +1,12 @@
 class Ship:
-    def __init__(self,hp,lengh,artillery, max_speed):
+    def __init__(self, hp, length, artillery, max_speed):
         self.hp=hp
-        self.lengh=lengh
+        self.length=length
         self.artillery=artillery
         self.max_speed=max_speed
+
+    def setup(self):
+        pass
 
     def shoot(self,artillery_number):
         pass
@@ -27,4 +30,7 @@ class Ship:
         pass
 
     def take_critical_hit(self):
+        pass
+
+    def ram(self):
         pass
