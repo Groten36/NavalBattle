@@ -4,3 +4,6 @@ class Interface:
 
     def setup(self):
         pass
+
+    def update(self):
+        pass

@@ -1,0 +1,30 @@
+class Ship:
+    def __init__(self,hp,lengh,artillery, max_speed):
+        self.hp=hp
+        self.lengh=lengh
+        self.artillery=artillery
+        self.max_speed=max_speed
+
+    def shoot(self,artillery_number):
+        pass
+
+    def move(self,speed):
+        pass
+
+    def take_damage(self,damage):
+        pass
+
+    def turn(self,direction):
+        pass
+
+    def calculate_damage(self,artillery_number):
+        pass
+
+    def lose_artillery(self,artillery_number):
+        pass
+
+    def check_status(self):
+        pass
+
+    def take_critical_hit(self):
+        pass
