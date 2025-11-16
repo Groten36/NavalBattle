@@ -6,6 +6,7 @@ pygame.init()
 
 surface=pygame.display.set_mode((1800, 900))
 pygame.display.set_caption('Naval Battle')
+surface.fill((211, 169, 108) )
 map=Map(surface,1500,900)
 map.setup()
 
