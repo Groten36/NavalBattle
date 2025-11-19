@@ -1,10 +1,12 @@
 class Ship:
-    def __init__(self, hp, length, artillery, max_speed):
+    def __init__(self, hp, length, artillery, max_speed,x_coordinate,y_coordinate):
         self.hp=hp
         self.length=length
         self.artillery=artillery
         self.max_speed=max_speed
         self.status=None
+        self.x_coordinate=x_coordinate
+        self.y_coordinate=y_coordinate
 
     def setup(self):
         pass
