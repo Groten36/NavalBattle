@@ -1,6 +1,6 @@
 import pygame
 
-from Map.Map import Map
+from Board.Board import Board
 from Ships.Ship import Ship
 
 pygame.init()

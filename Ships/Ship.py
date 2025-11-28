@@ -1,39 +1,35 @@
 class Ship:
-    def __init__(self, hp, length, artillery, max_speed,x_coordinate,y_coordinate):
-        self.hp=hp
+    def __init__(self, length:int, orientation:str,coordinates:list):
         self.length=length
-        self.artillery=artillery
-        self.max_speed=max_speed
-        self.status=None
-        self.x_coordinate=x_coordinate
-        self.y_coordinate=y_coordinate
+        self.hits=set()
+        self.orientation=orientation
+        self.is_sunk=False
+        self.coordinates=coordinates
 
-    def setup(self):
-        pass
+    def set_position(self, start_x: int, start_y: int, orientation: str):
 
-    def shoot(self,artillery_number):
-        pass
+        self.orientation = orientation
+        self.coordinates = []
 
-    def move(self,speed):
-        pass
+        for i in range(self.length):
+            if orientation == 'horizontal':
+                self.coordinates.append((start_x + i, start_y))
+            else:
+                self.coordinates.append((start_x, start_y + i))
 
-    def take_damage(self,damage):
-        pass
+    def is_hit(self, x: int, y: int) -> bool:
 
-    def turn(self,direction):
-        pass
+        hit_coordinates = (x, y)
 
-    def calculate_damage(self,artillery_number):
-        pass
+        if hit_coordinates not in self.coordinates:
+            return False
 
-    def lose_artillery(self,artillery_number):
-        pass
+        self.hits.add(hit_coordinates)
 
-    def check_status(self):
-        pass
+        if len(self.hits) == self.length:
+            self.is_sunk = True
+            print(f"!!! Statek  zatonął! !!!")
+            return True
 
-    def take_critical_hit(self):
-        pass
+        return False
 
-    def ram(self):
-        pass
