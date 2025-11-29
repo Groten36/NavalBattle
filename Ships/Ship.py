@@ -1,7 +1,8 @@
 class Ship:
-    def __init__(self, length:int, orientation:str,coordinates:list):
+    def __init__(self, id:int,length:int, orientation:str,coordinates:list):
+        self.id = id
         self.length=length
-        self.hits=set()
+        self.hits=0
         self.orientation=orientation
         self.is_sunk=False
         self.coordinates=coordinates
@@ -20,16 +21,17 @@ class Ship:
     def is_hit(self, x: int, y: int) -> bool:
 
         hit_coordinates = (x, y)
-
+        print("A tu kurwa")
         if hit_coordinates not in self.coordinates:
             return False
 
-        self.hits.add(hit_coordinates)
-
-        if len(self.hits) == self.length:
+        self.hits+=1
+        print(f"Czy to sie kurwa odpala {self.hits}")
+        #do poprawy jak zaczną wątki działać
+        if self.hits == self.length:
             self.is_sunk = True
             print(f"!!! Statek  zatonął! !!!")
-            return True
 
-        return False
+
+        return self.is_sunk
 
