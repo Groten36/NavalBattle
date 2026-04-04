@@ -21,12 +21,10 @@ class Ship:
     def is_hit(self, x: int, y: int) -> bool:
 
         hit_coordinates = (x, y)
-        print("A tu kurwa")
         if hit_coordinates not in self.coordinates:
             return False
 
         self.hits+=1
-        print(f"Czy to sie kurwa odpala {self.hits}")
         #do poprawy jak zaczną wątki działać
         if self.hits == self.length:
             self.is_sunk = True
